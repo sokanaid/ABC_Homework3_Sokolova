@@ -32,6 +32,7 @@ if __name__ == '__main__':
         if size < 1 or size > 10000:
             print("incorrect number of figures = {}. Set 0 < number <= 10000".format(size))
             exit(3)
+        c.rnd_in(size)
     else:
         err_message2()
         exit(2)

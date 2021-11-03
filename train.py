@@ -6,12 +6,14 @@ import transport
 class Train(transport.Transport):
 
     def __init__(self, *args):
-        self.numberOfRailwayCarriage = int(args[0])
-        super().__init__(args[1::])
+        if len(args):
 
-    def __int__(self):
-        super().__init__()
-        self.numberOfRailwayCarriage = random.randint(1, 20)
+            self.numberOfRailwayCarriage = int(args[0])
+            super().__init__(args[1],args[2])
+        else:
+            super().__init__()
+            self.numberOfRailwayCarriage = random.randint(1, 20)
+
 
     # Вывод
     def out(self, file):
