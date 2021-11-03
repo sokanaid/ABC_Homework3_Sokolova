@@ -1,5 +1,5 @@
 import random
-#from transport import Transport
+# from transport import Transport
 import transport
 
 
@@ -9,11 +9,10 @@ class Train(transport.Transport):
         if len(args):
 
             self.numberOfRailwayCarriage = int(args[0])
-            super().__init__(args[1],args[2])
+            super().__init__(args[1], args[2])
         else:
             super().__init__()
             self.numberOfRailwayCarriage = random.randint(1, 20)
-
 
     # Вывод
     def out(self, file):

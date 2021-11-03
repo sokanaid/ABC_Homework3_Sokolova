@@ -26,7 +26,7 @@ class Container:
         if k == 1:
             sp = Train(args[1], args[2], args[3])
         elif k == 2:
-            sp = Ship(args[1], args[2], args[3],args[4])
+            sp = Ship(args[1], args[2], args[3], args[4])
         elif k == 3:
             sp = Plane(args[1], args[2], args[3], args[4])
         return sp
