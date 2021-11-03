@@ -28,7 +28,7 @@ class Transport:
 
     # Ввод рандомного транспорта
     @staticmethod
-    def rnd_in(file):
+    def rnd_in():
         k = random.randint(1, 3)
         k = int(k)
         if k == 1:
