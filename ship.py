@@ -1,7 +1,7 @@
 import random
 from enum import Enum
 
-import Transport
+import transport
 
 
 class ShipType(Enum):
@@ -10,7 +10,7 @@ class ShipType(Enum):
     TANKER = 3
 
 
-class Ship(Transport):
+class Ship(transport.Transport):
 
     def __init__(self, *args):
         self.displacement = int(args[0])

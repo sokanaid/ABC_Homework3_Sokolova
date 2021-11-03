@@ -1,16 +1,45 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+import sys
+from MyContainer import Container
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+def err_message1():
+    print("incorrect command line!\n"
+          "  Waited:\n"
+          "     command -f infile outfile01 outfile02\n"
+          "  Or:\n"
+          "     command -n number outfile01 outfile02\n")
 
 
-# Press the green button in the gutter to run the script.
+def err_message2():
+    print("incorrect qualifier value!\n"
+          "  Waited:\n"
+          "     command -f infile outfile01 outfile02\n"
+          "  Or:\n"
+          "     command -n number outfile01 outfile02\n")
+
+
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    if len(sys.argv) != 5:
+        err_message1()
+        exit(1)
+    print("Start")
+    c = Container()
+    if sys.argv[1] == '-f':
+        file_input = open(sys.argv[2], 'r')
+        c.file_in(file_input)
+    elif sys.argv[1] == '-n':
+        size = int(sys.argv[2])
+        if size < 1 or size > 10000:
+            print("incorrect number of figures = {}. Set 0 < number <= 10000".format(size))
+            exit(3)
+    else:
+        err_message2()
+        exit(2)
+    file_out1 = open(sys.argv[3], 'w')
+    file_out1.write("Filled Container:\n")
+    c.out(file_out1)
+    file_out2 = open(sys.argv[4], 'w')
+    file_out2.write(c.shell_sort())
+    c.out(file_out2)
+    print("Stop")
+    exit()

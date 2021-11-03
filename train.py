@@ -1,8 +1,9 @@
-import Transport
 import random
+#from transport import Transport
+import transport
 
 
-class Train(Transport):
+class Train(transport.Transport):
 
     def __init__(self, *args):
         self.numberOfRailwayCarriage = int(args[0])

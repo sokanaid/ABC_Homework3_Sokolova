@@ -1,9 +1,9 @@
 import random
 
-import Transport
+import transport
 
 
-class Plane(Transport):
+class Plane(transport.Transport):
     def __init__(self, *args):
         self.flightRange = int(args[0])
         self.liftingCapacity = int(args[1])

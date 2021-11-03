@@ -1,4 +1,9 @@
-import Transport
+from random import random
+
+from plane import Plane
+from ship import Ship
+from train import Train
+from transport import Transport
 
 
 class Container:
@@ -9,14 +14,40 @@ class Container:
     def file_in(self, file):
         while True:
             try:
-                self.arr.append(Transport.file_in())
+                self.arr.append(Container.file_in())
             except:
                 break
+
+    # Ввод транспорта из файла
+    @staticmethod
+    def file_in(file):
+        k, args = file.readline().split()
+        k = int(k)
+        if k == 1:
+            sp = Train(args)
+        elif k == 2:
+            sp = Ship(args)
+        elif k == 3:
+            sp = Plane(args)
+        return sp
+
+        # Ввод рандомного транспорта
+        @staticmethod
+        def rnd_in():
+            k = random.randint(1, 3)
+            k = int(k)
+            if k == 1:
+                sp = Train()
+            elif k == 2:
+                sp = Ship()
+            elif k == 3:
+                sp = Plane()
+            return sp
 
     # Заполнение рандомными данными
     def rnd_in(self, size):
         while len(self.arr) != size:
-            transport = Transport.rnd_in()
+            transport = Container.rnd_in()
             if transport != None:
                 self.arr.append(transport)
 
@@ -30,7 +61,7 @@ class Container:
     # Сортировка Шелла
     def shell_sort(self):
         first = 0
-        last = len(self.arr);
+        last = len(self.arr)
         d = (last - first) // 2
         while d != 0:
             for i in range(first + d, last):
