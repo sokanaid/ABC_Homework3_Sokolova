@@ -1,0 +1,7 @@
+Container was sorted.
+Container contains 5 elements.
+0: It is a ship: displacement = 11544, type = 3, speed = 315, distance = 1165.68. Ideal time = 3.70057
+1: It is a ship: displacement = 27994, type = 1, speed = 394, distance = 2779.91. Ideal time = 7.05561
+2: It is a train: number of railway carriage = 20, speed = 39, distance = 1253.8. Ideal time = 32.14872
+3: It is a train: number of railway carriage = 2, speed = 127, distance = 6092.22. Ideal time = 47.97024
+4: It is a plane: flight range = 7137, lifting capacity = 30436, speed = 16, distance = 4399.05. Ideal time = 274.94063
