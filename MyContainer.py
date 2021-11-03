@@ -1,4 +1,4 @@
-from random import random
+import random
 
 from plane import Plane
 from ship import Ship
