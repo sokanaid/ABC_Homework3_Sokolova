@@ -27,6 +27,7 @@ if __name__ == '__main__':
     if sys.argv[1] == '-f':
         file_input = open(sys.argv[2], 'r')
         c.file_in(file_input)
+        file_input.close()
     elif sys.argv[1] == '-n':
         size = int(sys.argv[2])
         if size < 1 or size > 10000:
@@ -39,8 +40,10 @@ if __name__ == '__main__':
     file_out1 = open(sys.argv[3], 'w')
     file_out1.write("Filled Container:\n")
     c.out(file_out1)
+    file_out1.close()
     file_out2 = open(sys.argv[4], 'w')
     file_out2.write(c.shell_sort())
     c.out(file_out2)
+    file_out2.close()
     print("Stop")
     exit()
